@@ -42,9 +42,11 @@ const getChoice = function () {
 
 switch(getChoice()) {
     case "1" :
-        for(let contact of annuaire) {
-             alert(`Voici la liste de tous mes contacts : ${contact.nom} ${contact.prenom} ${contact.age} ans`);
+        let message = `Voici la liste de tous mes contacts : \n${annuaire[0].nom} ${annuaire[0].prenom} ${annuaire[0].age} ans`;
+        for (i=1 ; i<annuaire.length; i++) {
+            message += `\n${annuaire[i].nom} ${annuaire[i].prenom} ${annuaire[i].age} ans`
         }
+        alert(message)
         break;
     case "2" :
         let nom = prompt("Veuillez saisir votre nom de famille :");
